@@ -1,6 +1,6 @@
 package com.calculadora.core;
 
-public class RaizCuadrada extends OperacionUnaria {
+public class RaizCuadrada implements OperacionUnaria, ValidableUnaria {
     @Override
     public boolean esValido(int a) {
         return a >= 0;

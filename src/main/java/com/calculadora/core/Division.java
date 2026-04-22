@@ -1,6 +1,6 @@
 package com.calculadora.core;
 
-public class Division extends OperacionBinaria {
+public class Division implements OperacionBinaria, ValidableBinaria {
     @Override
     public boolean esValido(int a, int b) {
         return b != 0;

@@ -1,6 +1,6 @@
 package com.calculadora.core;
 
-public class LogaritmoNatural extends OperacionUnaria {
+public class LogaritmoNatural implements OperacionUnaria, ValidableUnaria {
     @Override
     public boolean esValido(int a) {
         return a > 0;

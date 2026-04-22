@@ -20,7 +20,13 @@ public class MotorOperacion {
             }
             
             if (operacion != null) {
-                if (operacion.esValido(num1, num2)) {
+                // Principio ISP en accion: Solo usa validación si la operación implementa la interfaz ValidableBinaria
+                boolean operacionValida = true;
+                if (operacion instanceof ValidableBinaria) {
+                    operacionValida = ((ValidableBinaria) operacion).esValido(num1, num2);
+                }
+
+                if (operacionValida) {
                     System.out.println("Resultado: " + operacion.ejecutar(num1, num2));
                 } else {
                     System.out.println("Error: Los números dados no son válidos para esta operación.");
@@ -37,7 +43,13 @@ public class MotorOperacion {
             }
             
             if (operacion != null) {
-                if (operacion.esValido(num)) {
+                // Principio ISP en accion: Solo usa validación si la operación implementa la interfaz ValidableUnaria
+                boolean operacionValida = true;
+                if (operacion instanceof ValidableUnaria) {
+                    operacionValida = ((ValidableUnaria) operacion).esValido(num);
+                }
+
+                if (operacionValida) {
                     System.out.println("Resultado: " + operacion.ejecutar(num));
                 } else {
                     System.out.println("Error: El número dado no es válido para esta operación.");
